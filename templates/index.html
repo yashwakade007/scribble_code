@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camera and Output</title>
+    <style>
+        #video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        #video-feed {
+            width: 640px;
+            height: 480px;
+            border: 1px solid black;
+        }
+        #text-area {
+            margin-top: 20px;
+            width: 640px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="video-container">
+        <h1>Camera Feed</h1>
+        <img id="video-feed" src="{{ url_for('video_feed') }}">
+        <h2>Output Area</h2>
+        <textarea id="text-area"></textarea>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
